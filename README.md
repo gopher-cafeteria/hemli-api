@@ -2,7 +2,7 @@
 title: Gin
 description: A Gin server
 tags:
-  - gin
+  - chi
   - golang
 ---
 
@@ -12,10 +12,25 @@ This example starts an [Gin](https://gin-gonic.com/) server.
 
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new?template=https%3A%2F%2Fgithub.com%2Frailwayapp%2Fexamples%2Ftree%2Fmaster%2Fexamples%2Fgin)
 
-## ✨ Features
+## ✨ How to run
 
-- Gin
-- Go
+1. Install dependencies
+
+```
+$ go get -d ./...
+```
+
+2. navigate to the cmd directory
+
+```
+$ cd .\cmd\
+```
+
+3. run the application
+
+```
+$ go run .
+```
 
 ## 💁‍♀️ How to use
 
@@ -24,4 +39,4 @@ This example starts an [Gin](https://gin-gonic.com/) server.
 
 ## 📝 Notes
 
-The server started simply returns a `message: Hello world!` payload in JSON. The server code is located in the `main.go` file.
+The server started simply returns a `message: Hello world! ` payload in JSON. The server code is located in the `main.go` file.
