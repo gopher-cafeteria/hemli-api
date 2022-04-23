@@ -24,4 +24,4 @@ This example starts an [Gin](https://gin-gonic.com/) server.
 
 ## 📝 Notes
 
-The server started simply returns a `message: Hello world!` payload in JSON. The server code is located in the `main.go` file.
+The server started simply returns a `message: Hello world! ` payload in JSON. The server code is located in the `main.go` file.
