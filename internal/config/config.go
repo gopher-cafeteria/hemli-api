@@ -30,7 +30,13 @@ func (c *Config) LoadEnv() {
 	}
 
 	filename := ".env." + env
-	err := godotenv.Load("../env/" + filename)
+	path := "../env/" + filename
+
+	if env == "production" {
+		path = "/etc/secrets/" + filename
+	}
+
+	err := godotenv.Load(path)
 	if err != nil {
 		log.Fatalf("Error loading %s file", filename)
 	}
