@@ -2,7 +2,7 @@
 title: Gin
 description: A Gin server
 tags:
-  - gin
+  - chi
   - golang
 ---
 
