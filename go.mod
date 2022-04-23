@@ -1,5 +1,5 @@
-module gin
+module hemli
 
-go 1.14
+go 1.18
 
-require github.com/gin-gonic/gin v1.7.1 // indirect
+require github.com/go-chi/chi/v5 v5.0.7 // indirect
