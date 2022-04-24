@@ -33,7 +33,7 @@ func (c *Config) LoadEnv() {
 	path := "../env/" + filename
 
 	if env == "production" {
-		path = "~/etc/secrets/" + filename
+		path = "/etc/secrets/" + filename
 	}
 
 	err := godotenv.Load(path)
