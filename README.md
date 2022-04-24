@@ -1,18 +1,15 @@
 ---
-title: Gin
-description: A Gin server
+title: Chi
+description: A Chi server for Hemli API
 tags:
   - chi
   - golang
+  - postgres
 ---
 
-# Gin Example
+# Hemli API
 
-This example starts an [Gin](https://gin-gonic.com/) server.
-
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new?template=https%3A%2F%2Fgithub.com%2Frailwayapp%2Fexamples%2Ftree%2Fmaster%2Fexamples%2Fgin)
-
-## ✨ How to run
+## ✨ How to run web server
 
 1. Install dependencies
 
@@ -32,11 +29,34 @@ $ cd .\cmd\
 $ go run .
 ```
 
-## 💁‍♀️ How to use
+## 🗄 Database and Migrations
 
-- Connect to your Railway project `railway link`
-- Start the development server `railway run go run main.go`
+- Hemli API uses Postgresql as main database source. In order to have an up and running postgres DB make sure you have docker installed on your local machine.Run following command to have postgres container up and running.
 
-## 📝 Notes
+<hr>
 
-The server started simply returns a `message: Hello world! ` payload in JSON. The server code is located in the `main.go` file.
+```
+$ docker-compose up -d
+```
+
+- Once database is up and running, run migrations to have required tables created.
+
+_Please note_: in order to run sql-migrate and all migration commands, you need to have pre-installed CLI tools. More information and instalation instructions check in <a href="https://github.com/rubenv/sql-migrate"> official documentation</a>.
+
+<hr>
+
+```
+$ make migrate-up
+```
+
+- similarly you can run following command to rollback all migrations
+
+```
+$ make migrate-down
+```
+
+- In order to create a new migration file, run following command in your terminal.
+
+```
+$ sql-migrate new MY_TABLE
+```
