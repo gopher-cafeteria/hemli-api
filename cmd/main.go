@@ -3,10 +3,8 @@ package main
 import (
 	"fmt"
 	"hemli/internal/config"
+	"hemli/internal/server"
 	"net/http"
-
-	"github.com/go-chi/chi/v5"
-	"github.com/go-chi/chi/v5/middleware"
 )
 
 var (
@@ -19,14 +17,10 @@ func init() {
 }
 
 func main() {
-	r := chi.NewRouter()
-	r.Use(middleware.Logger)
-
-	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("hello from go and chi"))
-	})
+	s := server.CreateNewServer()
+	s.MountHandlers()
 
 	addr := fmt.Sprintf("%s:%s", conf.Host, conf.Port)
 	fmt.Printf("Application started on: http://%s\n", addr)
-	http.ListenAndServe(addr, r)
+	http.ListenAndServe(addr, s.Router)
 }
