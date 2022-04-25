@@ -8,7 +8,6 @@ CREATE TABLE IF NOT EXISTS users
     password TEXT NOT NULL,
     date_created TIMESTAMPTZ NOT NULL,
     date_updated TIMESTAMPTZ,
-    CONSTRAINT users_pkey PRIMARY KEY (id)
 );
 
 
