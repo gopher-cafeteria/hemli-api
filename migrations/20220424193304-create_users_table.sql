@@ -2,12 +2,12 @@
 -- +migrate Up
 CREATE TABLE IF NOT EXISTS users
 (
-    id SERIAL,
+    id SERIAL NOT NULL PRIMARY KEY,
     username TEXT NOT NULL,
     email TEXT,
     password TEXT NOT NULL,
-    "dateCreated" DATE NOT NULL,
-    "dateUpdated" DATE,
+    date_created TIMESTAMPTZ NOT NULL,
+    date_updated TIMESTAMPTZ,
     CONSTRAINT users_pkey PRIMARY KEY (id)
 );
 
