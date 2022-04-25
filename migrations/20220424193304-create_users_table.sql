@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS users
     email TEXT,
     password TEXT NOT NULL,
     date_created TIMESTAMPTZ NOT NULL,
-    date_updated TIMESTAMPTZ,
+    date_updated TIMESTAMPTZ
 );
 
 
